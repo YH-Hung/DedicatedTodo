@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DedicatedTodo.Server", "DedicatedTodo.Server\DedicatedTodo.Server.fsproj", "{8212FD2A-3512-4B45-BAD7-DD96E1979244}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "DedicatedTodo.Server.Tests", "DedicatedTodo.Server.Tests\DedicatedTodo.Server.Tests.fsproj", "{49D6EEF5-6116-444F-85A7-1EC382651FCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8212FD2A-3512-4B45-BAD7-DD96E1979244}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8212FD2A-3512-4B45-BAD7-DD96E1979244}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8212FD2A-3512-4B45-BAD7-DD96E1979244}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8212FD2A-3512-4B45-BAD7-DD96E1979244}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49D6EEF5-6116-444F-85A7-1EC382651FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D6EEF5-6116-444F-85A7-1EC382651FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D6EEF5-6116-444F-85A7-1EC382651FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D6EEF5-6116-444F-85A7-1EC382651FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
