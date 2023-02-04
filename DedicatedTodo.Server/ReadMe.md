@@ -32,12 +32,6 @@ Cross-platform, free to use, and related packages were more abundant than other 
 - Query / Query with Conditions / Create / Update / Delete
 - OpenAPI document
 
-## Todos
-- Exception handling
-- Filter
-- OrderBy
-- Unit Tests
-
 ## Further Optimization
 - Paged
 - Rate limit

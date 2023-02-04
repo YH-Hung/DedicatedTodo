@@ -16,7 +16,6 @@
         <Compile Include="DomainTests.fs" />
         <Compile Include="TodoControllerTests.fs" />
         <Compile Include="Program.fs" />
-        <None Include="ReplTests.fsx" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,11 +1,11 @@
 /// Consolidate data flow via Railway oriented programming
-module EvaluateTodo.Server.Flow.Railway
+module DedicatedTodo.Server.Flow.Railway
 
-open EvaluateTodo.Server.DAL
-open EvaluateTodo.Server.Util
-open EvaluateTodo.Server.Dto
-open EvaluateTodo.Server.Dto.Rest
-open EvaluateTodo.Server.Dto.Validation
+open DedicatedTodo.Server.DAL
+open DedicatedTodo.Server.Util
+open DedicatedTodo.Server.Dto
+open DedicatedTodo.Server.Dto.Rest
+open DedicatedTodo.Server.Dto.Validation
 open Microsoft.AspNetCore
 
 /// In case of not found is an error.

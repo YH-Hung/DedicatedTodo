@@ -1,8 +1,8 @@
-module EvaluatedTodo.Server.Tests.PatchDtoValidationTests
+module DedicatedTodo.Server.Tests.PatchDtoValidationTests
 
 open System
-open EvaluateTodo.Server.Dto.Rest
-open EvaluateTodo.Server.Dto.Validation
+open DedicatedTodo.Server.Dto.Rest
+open DedicatedTodo.Server.Dto.Validation
 open Xunit
 open FsUnit.Xunit
 open FsUnit.CustomMatchers

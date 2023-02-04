@@ -1,8 +1,8 @@
-module EvaluatedTodo.Server.Tests.BasicValidationTests
+module DedicatedTodo.Server.Tests.BasicValidationTests
 
 open System
-open EvaluateTodo.Server.Util.PrimaryUtil
-open EvaluateTodo.Server.Dto.Validation
+open DedicatedTodo.Server.Util.PrimaryUtil
+open DedicatedTodo.Server.Dto.Validation
 open Xunit
 open FsUnit.Xunit
 open FsUnit.CustomMatchers

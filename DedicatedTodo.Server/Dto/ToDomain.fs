@@ -1,8 +1,8 @@
 /// Process valid endpoint DTO to domain model
-module EvaluateTodo.Server.Dto.ToDomain
+module DedicatedTodo.Server.Dto.ToDomain
 
-open EvaluateTodo.Server.Domain
-open EvaluateTodo.Server.Dto.Validation
+open DedicatedTodo.Server.Domain
+open DedicatedTodo.Server.Dto.Validation
 
 /// Combine patch requests into single operation
 let consolidatePatchCmd (validPatch: ValidPatch) =

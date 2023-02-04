@@ -1,7 +1,7 @@
-module EvaluatedTodo.Server.Tests.PostDtoValidationTests
+module DedicatedTodo.Server.Tests.PostDtoValidationTests
 
-open EvaluateTodo.Server.Dto.Rest
-open EvaluateTodo.Server.Dto.Validation
+open DedicatedTodo.Server.Dto.Rest
+open DedicatedTodo.Server.Dto.Validation
 open Xunit
 open FsUnit.Xunit
 open FsUnit.CustomMatchers

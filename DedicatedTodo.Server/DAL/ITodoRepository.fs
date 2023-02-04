@@ -1,6 +1,6 @@
-namespace EvaluateTodo.Server.DAL
+namespace DedicatedTodo.Server.DAL
 
-open EvaluateTodo.Server.DbMapping
+open DedicatedTodo.Server.DbMapping
 open Microsoft.FSharp.Collections
 
 /// Decoupling Data access logic from implementation

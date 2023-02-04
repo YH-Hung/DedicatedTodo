@@ -1,5 +1,5 @@
 [<Microsoft.FSharp.Core.AutoOpen>]
-module EvaluateTodo.Server.Util.ErrorX
+module DedicatedTodo.Server.Util.ErrorX
 
 /// OK -> empty string / Error -> combine error message
 let inline (+?) r1 r2 =

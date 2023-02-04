@@ -1,8 +1,8 @@
 /// Data access related procedures
-module EvaluateTodo.Server.TodoNpgSql
+module DedicatedTodo.Server.TodoNpgSql
 
 open System
-open EvaluateTodo.Server.DbMapping
+open DedicatedTodo.Server.DbMapping
 open Dapper
 open Npgsql
 open Polly

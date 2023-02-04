@@ -1,8 +1,8 @@
-namespace EvaluateTodo.Server.Util.PrimaryUtil
+namespace DedicatedTodo.Server.Util.PrimaryUtil
 
 open System
 open Microsoft.FSharp.Core
-open EvaluateTodo.Server.Util
+open DedicatedTodo.Server.Util
 
 /// Ensure string length from 0 to 50
 type String50 = private String50 of string

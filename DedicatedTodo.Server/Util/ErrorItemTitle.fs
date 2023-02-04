@@ -1,4 +1,4 @@
-namespace EvaluateTodo.Server.Util
+namespace DedicatedTodo.Server.Util
 
 open System.Collections.Generic
 

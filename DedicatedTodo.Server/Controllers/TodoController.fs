@@ -1,8 +1,8 @@
-namespace EvaluateTodo.Server.Controllers
+namespace DedicatedTodo.Server.Controllers
 
-open EvaluateTodo.Server.DAL
-open EvaluateTodo.Server.Flow
-open EvaluateTodo.Server.Dto.Rest
+open DedicatedTodo.Server.DAL
+open DedicatedTodo.Server.Flow
+open DedicatedTodo.Server.Dto.Rest
 open Microsoft.AspNetCore.Http
 open Microsoft.AspNetCore.Mvc
 

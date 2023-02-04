@@ -1,7 +1,7 @@
-namespace EvaluateTodo.Server
+namespace DedicatedTodo.Server
 #nowarn "20"    // suppress return not used warn
 open System.Reflection
-open EvaluateTodo.Server.DAL
+open DedicatedTodo.Server.DAL
 open Microsoft.AspNetCore.Builder
 open Microsoft.Extensions.DependencyInjection
 open Microsoft.Extensions.Hosting

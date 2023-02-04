@@ -1,6 +1,6 @@
-module EvaluateTodo.Server.Domain.TodoIt
+module DedicatedTodo.Server.Domain.TodoIt
 
-open EvaluateTodo.Server.Domain
+open DedicatedTodo.Server.Domain
 
 let private markDone (todo: TodoItem) =
     match todo with

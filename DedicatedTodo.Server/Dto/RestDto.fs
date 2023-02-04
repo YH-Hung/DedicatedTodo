@@ -1,9 +1,9 @@
-namespace EvaluateTodo.Server.Dto.Rest
+namespace DedicatedTodo.Server.Dto.Rest
 
 open System
 open System.ComponentModel.DataAnnotations
 open System.Text.Json.Serialization
-open EvaluateTodo.Server.Util
+open DedicatedTodo.Server.Util
 
 /// Filter endpoint model (From Uri)
 [<CLIMutable>]

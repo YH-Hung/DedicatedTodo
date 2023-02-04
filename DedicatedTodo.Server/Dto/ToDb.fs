@@ -1,12 +1,12 @@
 /// Map Domain and Valid endpoint Dto to DB related DTO
-module EvaluateTodo.Server.Dto.ToDb
+module DedicatedTodo.Server.Dto.ToDb
 
 open System
-open EvaluateTodo.Server.Domain
-open EvaluateTodo.Server.Dto.Validation
-open EvaluateTodo.Server.DbMapping
-open EvaluateTodo.Server.Util
-open EvaluateTodo.Server.Util.PrimaryUtil
+open DedicatedTodo.Server.Domain
+open DedicatedTodo.Server.Dto.Validation
+open DedicatedTodo.Server.DbMapping
+open DedicatedTodo.Server.Util
+open DedicatedTodo.Server.Util.PrimaryUtil
 
 /// Convert Priority domain type to value in DB
 let private priorityToId priority =

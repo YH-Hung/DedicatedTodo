@@ -1,4 +1,4 @@
-namespace EvaluateTodo.Server.DbMapping
+namespace DedicatedTodo.Server.DbMapping
 
 open System
 

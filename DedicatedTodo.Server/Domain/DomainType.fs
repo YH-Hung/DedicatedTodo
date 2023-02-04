@@ -1,6 +1,6 @@
-namespace EvaluateTodo.Server.Domain
+namespace DedicatedTodo.Server.Domain
 
-open EvaluateTodo.Server.Util.PrimaryUtil
+open DedicatedTodo.Server.Util.PrimaryUtil
 
 type Priority = High | Medium | Low | NotAssigned
 

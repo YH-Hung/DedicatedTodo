@@ -1,10 +1,10 @@
 module TodoControllerTests
 
 open System
-open EvaluateTodo.Server.Controllers
-open EvaluateTodo.Server.DAL
-open EvaluateTodo.Server.DbMapping
-open EvaluateTodo.Server.Dto.Rest
+open DedicatedTodo.Server.Controllers
+open DedicatedTodo.Server.DAL
+open DedicatedTodo.Server.DbMapping
+open DedicatedTodo.Server.Dto.Rest
 open Microsoft.AspNetCore
 open Moq
 open Xunit

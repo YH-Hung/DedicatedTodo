@@ -1,11 +1,11 @@
-namespace EvaluateTodo.Server.Dto.Validation
+namespace DedicatedTodo.Server.Dto.Validation
 
 open System
-open EvaluateTodo.Server.DbMapping
-open EvaluateTodo.Server.Domain
-open EvaluateTodo.Server.Util.PrimaryUtil
-open EvaluateTodo.Server.Util
-open EvaluateTodo.Server.Dto.Rest
+open DedicatedTodo.Server.DbMapping
+open DedicatedTodo.Server.Domain
+open DedicatedTodo.Server.Util.PrimaryUtil
+open DedicatedTodo.Server.Util
+open DedicatedTodo.Server.Dto.Rest
 
 /// Validated Post inputs
 type ValidPost = {

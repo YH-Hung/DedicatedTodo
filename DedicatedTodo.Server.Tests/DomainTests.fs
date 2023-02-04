@@ -1,7 +1,7 @@
-module EvaluatedTodo.Server.Tests.DomainTests
+module DedicatedTodo.Server.Tests.DomainTests
 
-open EvaluateTodo.Server.Domain
-open EvaluateTodo.Server.Util.PrimaryUtil
+open DedicatedTodo.Server.Domain
+open DedicatedTodo.Server.Util.PrimaryUtil
 open Xunit
 open FsUnit.Xunit
 open FsUnit.CustomMatchers

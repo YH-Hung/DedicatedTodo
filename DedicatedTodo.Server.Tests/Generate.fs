@@ -1,5 +1,5 @@
 /// XUnit Theory only consume IEnumerable<Object[]>
-module EvaluatedTodo.Server.Tests.Generate
+module DedicatedTodo.Server.Tests.Generate
 
 open System.Security.Cryptography
 open System.Text

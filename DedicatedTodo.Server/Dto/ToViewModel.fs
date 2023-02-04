@@ -1,11 +1,11 @@
 /// Deliver View Model DTO for Frontend
-module EvaluateTodo.Server.Dto.ToViewModel
+module DedicatedTodo.Server.Dto.ToViewModel
 
-open EvaluateTodo.Server.DbMapping
-open EvaluateTodo.Server.Domain
-open EvaluateTodo.Server.Dto.Rest
-open EvaluateTodo.Server.Dto.Validation
-open EvaluateTodo.Server.Util
+open DedicatedTodo.Server.DbMapping
+open DedicatedTodo.Server.Domain
+open DedicatedTodo.Server.Dto.Rest
+open DedicatedTodo.Server.Dto.Validation
+open DedicatedTodo.Server.Util
 open Microsoft.AspNetCore
 
 /// Convert Priority id to value in view

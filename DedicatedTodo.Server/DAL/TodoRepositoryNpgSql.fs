@@ -1,6 +1,6 @@
-namespace EvaluateTodo.Server.DAL
+namespace DedicatedTodo.Server.DAL
 
-open EvaluateTodo.Server
+open DedicatedTodo.Server
 open Npgsql
 
 /// Delegate data access logic to NpgSql + Dapper implementation
