@@ -13,7 +13,7 @@ function Provider({children}) {
     const [errorObj, setErrorObj] = useState(undefined);
 
 
-    const baseUrl = "https://localhost:7172/todo";
+    const baseUrl = process.env.REACT_APP_API_URL;
     const genSuccessObj = (code) => ({
         title: HttpCodeDesc(code),
         status: code,

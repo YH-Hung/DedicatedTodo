@@ -1,0 +1,33 @@
+name: react-fs-postgres
+services:
+    frontend:
+        image: reactodo:1.0
+        build:
+            context: todo-front
+        environment:
+            - REACT_APP_API_URL=http://backend:80/todo
+        ports:
+            - 3000:80
+        depends_on:
+            - backend
+
+    backend:
+        image: fstodo/server:1.0
+        build:
+            context: DedicatedTodo.Server
+        ports:
+            - 5023:80
+        environment:
+            - ConnectionStrings__todos=Server=db;Port=5432;Database=postgres;User Id=postgres;Password=mysecretpassword;
+        depends_on:
+            - db
+
+    db:
+        image: postgres:14-alpine
+        restart: always
+        environment:
+            - POSTGRES_PASSWORD=mysecretpassword
+        ports:
+            - 5432:5432
+        volumes:
+            - ./init.sql:/docker-entrypoint-initdb.d/init.sql

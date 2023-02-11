@@ -36,7 +36,7 @@ module Program =
 
         let app = builder.Build()
 
-        app.UseHttpsRedirection()
+        // app.UseHttpsRedirection()
         app.UseHttpLogging()
 
         app.UseSwagger()
