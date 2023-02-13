@@ -197,11 +197,6 @@
  Map Domain model to DB command parameters
 </summary>
 </member>
-<member name="M:DedicatedTodo.Server.Dto.ToDb.dbReturnConditionToResult``1(DedicatedTodo.Server.DbMapping.DbReturnCondition{``0})">
-<summary>
- Map DB query / exec return condition to Result
-</summary>
-</member>
 <member name="M:DedicatedTodo.Server.Dto.ToDb.postDtoToInsertParameter(DedicatedTodo.Server.Dto.Validation.ValidPost)">
 <summary>
  Convert Valid post model to SQL parameter
@@ -219,7 +214,7 @@
 </member>
 <member name="T:DedicatedTodo.Server.Dto.ToDb">
 <summary>
- Map Domain and Valid endpoint Dto to DB related DTO
+ Map Domain and Valid endpoint Dto to DB command parameter
 </summary>
 </member>
 <member name="M:DedicatedTodo.Server.Dto.ToDomain.consolidatePatchCmd(DedicatedTodo.Server.Dto.Validation.ValidPatch)">
@@ -255,6 +250,16 @@
 <member name="T:DedicatedTodo.Server.Dto.ToViewModel">
 <summary>
  Deliver View Model DTO for Frontend
+</summary>
+</member>
+<member name="M:DedicatedTodo.Server.Dto.FromDb.dbReturnConditionToResult``1(DedicatedTodo.Server.DbMapping.DbReturnCondition{``0})">
+<summary>
+ Map DB query / exec return condition to Result
+</summary>
+</member>
+<member name="T:DedicatedTodo.Server.Dto.FromDb">
+<summary>
+ Map DB return to Domain
 </summary>
 </member>
 <member name="M:DedicatedTodo.Server.Flow.Railway.patchById(DedicatedTodo.Server.DAL.ITodoRepository,System.Int32,DedicatedTodo.Server.Dto.Rest.PatchTodo)">

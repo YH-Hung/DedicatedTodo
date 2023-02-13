@@ -8,7 +8,7 @@ open DedicatedTodo.Server.Dto.Rest
 open DedicatedTodo.Server.Dto.Validation
 open Microsoft.AspNetCore
 
-/// In case of not found is an error.
+/// In case of treating not found as error.
 let private resultFromOption errMsg opVal =
     match opVal with
     | None -> Error errMsg
@@ -31,7 +31,7 @@ let private queryAllTemplate queryReturn =
             |> Http.Results.Ok<ResizeArray<TodoViewModel>>
 
     queryReturn
-    |> ToDb.dbReturnConditionToResult
+    |> FromDb.returnConditionToResult
     |> resultToHttp normalFlow (fun _ -> Http.Results.StatusCode(500))
 
 /// List all todos in DB
@@ -41,8 +41,8 @@ let queryAll (repo: ITodoRepository) = queryAllTemplate (repo.QueryAll())
 let filterBy (repo: ITodoRepository) filterModel =
     let successFlow =
         ToDb.filterDtoToWhereClause
-        >> Option.map repo.QueryFilteredAll
-        >> Option.defaultValue (repo.QueryAll())
+        >> Option.map repo.QueryFilteredAll     // No Where Clause -> Do nothing
+        >> Option.defaultValue (repo.QueryAll()) // Do nothing -> fallback to query all
         >> queryAllTemplate
 
     filterModel
@@ -52,7 +52,7 @@ let filterBy (repo: ITodoRepository) filterModel =
 /// Try to fetch the selected todoItem
 let queryById (repo: ITodoRepository) id =
     repo.QueryById id
-    |> ToDb.dbReturnConditionToResult
+    |> FromDb.returnConditionToResult
     |> Result.bind (resultFromOption [(TargetId, $"Todo with id {id} is not found")])
     |> resultToHttp (ToViewModel.entity2ViewModel >> Http.Results.Ok<TodoViewModel>) (ErrorItem.consolidate >> ToViewModel.notFound)
 
@@ -61,13 +61,13 @@ let insertSingleTodo (repo: ITodoRepository) postModel =
     postModel
     |> Validate.post
     |> Result.map ToDb.postDtoToInsertParameter
-    |> Result.bind (repo.InsertSingle >> ToDb.dbReturnConditionToResult)
+    |> Result.bind (repo.InsertSingle >> FromDb.returnConditionToResult)
     |> resultToHttp (fun newId -> Http.Results.Created<int>($"/{newId}", newId)) (ErrorItem.consolidate >> ToViewModel.badRequest)
 
 /// Try to delete the selected todoItem
 let deleteById (repo: ITodoRepository) id =
     repo.DeleteById id
-    |> ToDb.dbReturnConditionToResult
+    |> FromDb.returnConditionToResult
     |> resultToHttp (fun _ -> Http.Results.Accepted()) (ErrorItem.consolidate >> ToViewModel.notFound)
 
 /// Try to update the selected todoItem with provided field values
@@ -79,7 +79,7 @@ let patchById (repo: ITodoRepository) id patchModel =
 
     let toBePatchedTodo =
         repo.QueryById id
-        |> ToDb.dbReturnConditionToResult
+        |> FromDb.returnConditionToResult
         |> Result.bind normalFindProcessFlow
 
     let validPatch = patchModel |> Validate.patch
@@ -94,5 +94,5 @@ let patchById (repo: ITodoRepository) id patchModel =
             |> ToDomain.consolidatePatchCmd validPatch
             |> ToDb.todoItemExtractUpdateParameter
             |> repo.UpdateEntity
-            |> ToDb.dbReturnConditionToResult
+            |> FromDb.returnConditionToResult
             |> resultToHttp (fun _ -> Http.Results.Accepted()) (ErrorItem.consolidate >> ToViewModel.badRequest)

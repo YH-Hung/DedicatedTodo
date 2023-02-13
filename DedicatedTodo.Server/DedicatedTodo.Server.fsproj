@@ -29,6 +29,7 @@
         <Compile Include="Dto\ToDb.fs" />
         <Compile Include="Dto\ToDomain.fs" />
         <Compile Include="Dto\ToViewModel.fs" />
+        <Compile Include="Dto\FromDb.fs" />
         <Compile Include="Flow\Railway.fs" />
         <Compile Include="Controllers\TodoController.fs" />
         <Compile Include="Program.fs" />
