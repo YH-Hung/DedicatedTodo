@@ -37,6 +37,21 @@
  Projection of SELECT query
 </summary>
 </member>
+<member name="M:DedicatedTodo.Server.TodoNpgSql.safeDbOperation``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0)">
+<summary>
+ Apply policy and handling exception
+</summary>
+</member>
+<member name="P:DedicatedTodo.Server.TodoNpgSql.breaker">
+<summary>
+ Circuit break for intensive failure
+</summary>
+</member>
+<member name="P:DedicatedTodo.Server.TodoNpgSql.waitAndRetry">
+<summary>
+ Retry transient DB exception
+</summary>
+</member>
 <member name="M:DedicatedTodo.Server.TodoNpgSql.castDbQueryReturn``1(``0)">
 <summary>
  Null from DB -&gt; None
@@ -49,7 +64,7 @@
 </member>
 <member name="T:DedicatedTodo.Server.DAL.ITodoRepository">
 <summary>
- Decoupling Data access logic from implementation
+ Decoupling Data access logic from implementation for mock
 </summary>
 </member>
 <member name="T:DedicatedTodo.Server.DAL.TodoRepositoryNpgSql">
@@ -129,7 +144,7 @@
 </member>
 <member name="T:DedicatedTodo.Server.Dto.Rest.FilterTodo">
 <summary>
- Filter endpoint model (From Uri)
+ Filter endpoint model (From Uri query string)
 </summary>
 </member>
 <member name="T:DedicatedTodo.Server.Dto.Validation.ValidFilter">
@@ -189,12 +204,12 @@
 </member>
 <member name="M:DedicatedTodo.Server.Dto.ToDb.todoItemExtractUpdateParameter(DedicatedTodo.Server.Domain.TodoItem)">
 <summary>
- Map Domain model to DB command parameters
+ Map Domain model to DB Update command parameters
 </summary>
 </member>
 <member name="M:DedicatedTodo.Server.Dto.ToDb.extractTodoContent(DedicatedTodo.Server.Domain.TodoContent)">
 <summary>
- Map Domain model to DB command parameters
+ Map Domain model to DB Update command parameters
 </summary>
 </member>
 <member name="M:DedicatedTodo.Server.Dto.ToDb.postDtoToInsertParameter(DedicatedTodo.Server.Dto.Validation.ValidPost)">
@@ -204,7 +219,7 @@
 </member>
 <member name="M:DedicatedTodo.Server.Dto.ToDb.filterDtoToWhereClause(DedicatedTodo.Server.Dto.Validation.ValidFilter)">
 <summary>
- Convert valid filter model to SQL
+ Convert valid filter model to SQL where condition
 </summary>
 </member>
 <member name="M:DedicatedTodo.Server.Dto.ToDb.priorityToId(DedicatedTodo.Server.Domain.Priority)">
@@ -252,7 +267,7 @@
  Deliver View Model DTO for Frontend
 </summary>
 </member>
-<member name="M:DedicatedTodo.Server.Dto.FromDb.dbReturnConditionToResult``1(DedicatedTodo.Server.DbMapping.DbReturnCondition{``0})">
+<member name="M:DedicatedTodo.Server.Dto.FromDb.returnConditionToResult``1(DedicatedTodo.Server.DbMapping.DbReturnCondition{``0})">
 <summary>
  Map DB query / exec return condition to Result
 </summary>
@@ -304,7 +319,7 @@
 </member>
 <member name="M:DedicatedTodo.Server.Flow.Railway.resultFromOption``2(``0,Microsoft.FSharp.Core.FSharpOption{``1})">
 <summary>
- In case of not found is an error.
+ In case of treating not found as error.
 </summary>
 </member>
 <member name="T:DedicatedTodo.Server.Flow.Railway">

@@ -15,7 +15,7 @@ let private priorityToId priority =
     | Low -> Nullable 3
     | NotAssigned -> Nullable()
 
-/// Convert valid filter model to SQL
+/// Convert valid filter model to SQL where condition
 let filterDtoToWhereClause (validFilter: ValidFilter) =
     let { ValidByStatus = completeOp; ValidByPriority = priorityOp } = validFilter
     match completeOp, priorityOp with
@@ -33,13 +33,13 @@ let postDtoToInsertParameter (validPost: ValidPost) =
 
 let private extractId (TodoIdentity tId) = tId
 
-/// Map Domain model to DB command parameters
+/// Map Domain model to DB Update command parameters
 let private extractTodoContent (content: TodoContent) =
     { TargetId = extractId content.Id
       UpdateTitle = content.Title |> String50.value
       UpdatePriorityId = content.SelectedPriority |> priorityToId }
 
-/// Map Domain model to DB command parameters
+/// Map Domain model to DB Update command parameters
 let todoItemExtractUpdateParameter (todo: TodoItem) =
     match todo with
     | InCompleteTodo content -> false, (content |> extractTodoContent)

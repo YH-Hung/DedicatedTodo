@@ -5,35 +5,34 @@ open System.ComponentModel.DataAnnotations
 open System.Text.Json.Serialization
 open DedicatedTodo.Server.Util
 
-/// Filter endpoint model (From Uri)
+/// Filter endpoint model (From Uri query string)
 [<CLIMutable>]
-type FilterTodo = {
-    ByComplete: Nullable<bool>
-    ByPriority: string
-}
+type FilterTodo =
+    { ByComplete: Nullable<bool>
+      ByPriority: string }
 
 /// Post endpoint model
 [<CLIMutable>]
-type PostTodo = {
-    [<Required>] [<StringLength(50)>] PostTitle: string
-    PostPriority: string    // null, empty, whitespace -> NotAssigned
-}
+type PostTodo =
+    { [<Required>]
+      [<StringLength(50)>]
+      PostTitle: string
+      PostPriority: string } // null, empty, whitespace -> NotAssigned
 
 /// Patch endpoint model
 [<CLIMutable>]
-type PatchTodo = {
-    [<StringLength(50)>] PatchTitle: string
-    PatchComplete: Nullable<bool>
-    PatchPriority: string   // null -> not patched, empty, whitespace -> NotAssign
-}
+type PatchTodo =
+    { [<StringLength(50)>]
+      PatchTitle: string
+      PatchComplete: Nullable<bool>
+      PatchPriority: string } // null -> not patched, empty, whitespace -> NotAssign
 
 /// Query response content
-type TodoViewModel = {
-    Id: int
-    Title: string
-    IsComplete: bool
-    Priority: string
-}
+type TodoViewModel =
+    { Id: int
+      Title: string
+      IsComplete: bool
+      Priority: string }
 
 /// Map to HTTP status code
 type HttpCode =
@@ -44,8 +43,10 @@ type HttpCode =
 
 
 /// Unified error return, align with APIController model invalid format.
-type ErrorViewModel = {
-    [<JsonPropertyName("title")>] ErrorTitle: string
-    [<JsonPropertyName("status")>] ErrorCode: HttpCode
-    [<JsonPropertyName("errors")>] ErrorItems: ErrorCollection
-}
+type ErrorViewModel =
+    { [<JsonPropertyName("title")>]
+      ErrorTitle: string
+      [<JsonPropertyName("status")>]
+      ErrorCode: HttpCode
+      [<JsonPropertyName("errors")>]
+      ErrorItems: ErrorCollection }

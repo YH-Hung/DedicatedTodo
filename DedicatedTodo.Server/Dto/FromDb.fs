@@ -13,3 +13,4 @@ let returnConditionToResult dbExecCond =
         | _ -> Ok result
     | TransientFailure code -> Error [(DbExec, $"Transient DB error code {code}")]
     | InvalidOperation code -> Error [(DbExec, $"DB exception error code {code}")]
+    | CircuitOnBreak -> Error [(DbExec, "Circuit on break due to intensive failure.")]
